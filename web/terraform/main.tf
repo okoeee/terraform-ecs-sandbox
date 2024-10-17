@@ -8,10 +8,6 @@ terraform {
   }
 }
 
-locals {
-  app_name                 = "terraform-sandbox"
-}
-
 # Provider
 provider "aws" {
   profile = "terraform-user"
@@ -21,4 +17,11 @@ provider "aws" {
       application = local.app_name
     }
   }
+}
+
+# Network
+module "network" {
+  source = "./modules/network"
+
+  name_prefix = var.name_prefix
 }
