@@ -57,3 +57,28 @@ module "iam" {
 
   name_prefix = var.name_prefix
 }
+
+# ECR
+module "ecr" {
+  source = "./modules/ecr"
+
+  name_prefix = var.name_prefix
+}
+
+# ECS
+module "ecs" {
+  source = "./modules/ecs"
+
+  region = var.region
+  name_prefix = var.name_prefix
+  web_app_port = var.web_app_port
+
+  ecr_repository_uri = module.ecr.repository_uri
+  execution_role_arn = module.iam.ecs_execution_role_arn
+
+  logs_group_name = module.cloudwatch.logs_group_name
+  target_group_arn = module.alb.target_arn
+
+  subnet_public_id = module.network.subnet_public_id
+  security_group_id = module.security.security_group_id
+}
