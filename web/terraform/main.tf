@@ -33,3 +33,10 @@ module "security" {
   name_prefix = var.name_prefix
   vpc_id = module.network.vpc_id
 }
+
+# CloudWatch
+module "cloudwatch" {
+  source = "./modules/cloudwatch"
+
+  name_prefix = var.name_prefix
+}
