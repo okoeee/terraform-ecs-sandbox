@@ -5,7 +5,8 @@ resource "aws_alb" "default" {
   load_balancer_type = "application"
   security_groups = [var.sg_id]
   subnets = [
-    var.subnet_public_id
+    var.subnet_public_id_a,
+    var.subnet_public_id_c
   ]
   idle_timeout = 60
   enable_deletion_protection = false

@@ -3,7 +3,8 @@
 variable "name_prefix" {}
 
 # Network
-variable "subnet_public_id" {}
+variable "subnet_public_id_a" {}
+variable "subnet_public_id_c" {}
 
 # Security Group
 variable "sg_id" {}

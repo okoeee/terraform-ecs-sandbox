@@ -9,7 +9,8 @@ variable "execution_role_arn" {}
 
 variable "logs_group_name" {}
 variable "target_group_arn" {}
-variable "subnet_public_id" {}
+variable "subnet_public_id_a" {}
+variable "subnet_public_id_c" {}
 variable "security_group_id" {}
 
 locals {

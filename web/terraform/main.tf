@@ -46,7 +46,8 @@ module "alb" {
   source = "./modules/alb"
 
   name_prefix = var.name_prefix
-  subnet_public_id = module.network.subnet_public_id
+  subnet_public_id_a = module.network.subnet_public_id_a
+  subnet_public_id_c = module.network.subnet_public_id_c
   sg_id = module.security.security_group_id
   vpc_id = module.network.vpc_id
 }
@@ -79,6 +80,7 @@ module "ecs" {
   logs_group_name = module.cloudwatch.logs_group_name
   target_group_arn = module.alb.target_arn
 
-  subnet_public_id = module.network.subnet_public_id
+  subnet_public_id_a = module.network.subnet_public_id_a
+  subnet_public_id_c = module.network.subnet_public_id_c
   security_group_id = module.security.security_group_id
 }
