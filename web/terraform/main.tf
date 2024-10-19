@@ -40,3 +40,13 @@ module "cloudwatch" {
 
   name_prefix = var.name_prefix
 }
+
+# ALB
+module "alb" {
+  source = "./modules/alb"
+
+  name_prefix = var.name_prefix
+  subnet_public_id = module.network.subnet_public_id
+  sg_id = module.security.security_group_id
+  vpc_id = module.network.vpc_id
+}
