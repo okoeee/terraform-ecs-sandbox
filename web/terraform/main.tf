@@ -50,3 +50,10 @@ module "alb" {
   sg_id = module.security.security_group_id
   vpc_id = module.network.vpc_id
 }
+
+# IAM
+module "iam" {
+  source = "./modules/iam"
+
+  name_prefix = var.name_prefix
+}
