@@ -4,6 +4,7 @@ resource "aws_ecs_service" "default" {
   cluster = aws_ecs_cluster.default.id
   task_definition = aws_ecs_task_definition.defalut.arn
   desired_count = local.service_count
+  launch_type = local.task_requires_compatibilities
 
   load_balancer {
     target_group_arn = var.target_group_arn

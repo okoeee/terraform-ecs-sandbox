@@ -5,6 +5,6 @@ resource "aws_ecs_task_definition" "defalut" {
   cpu = local.task_cpu
   memory = local.task_memory
   network_mode = local.task_network_mode
-  requires_compatibilities = local.task_requires_compatibilities
+  requires_compatibilities = [local.task_requires_compatibilities]
   execution_role_arn = var.execution_role_arn
 }

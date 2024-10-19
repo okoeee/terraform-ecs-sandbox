@@ -31,7 +31,7 @@ locals {
 
   task_log_driver = "awslogs"
   task_network_mode = "awsvpc"
-  task_requires_compatibilities = ["FARGATE"]
+  task_requires_compatibilities = "FARGATE"
 
   service_count = 1
 }
