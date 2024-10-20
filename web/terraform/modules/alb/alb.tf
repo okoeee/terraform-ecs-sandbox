@@ -3,7 +3,7 @@ resource "aws_alb" "default" {
   name = local.alb_name
   internal = false
   load_balancer_type = "application"
-  security_groups = [var.sg_id]
+  security_groups = [var.alb_sg_id]
   subnets = [
     var.subnet_public_id_a,
     var.subnet_public_id_c

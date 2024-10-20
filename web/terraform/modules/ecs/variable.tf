@@ -11,7 +11,7 @@ variable "logs_group_name" {}
 variable "target_group_arn" {}
 variable "subnet_public_id_a" {}
 variable "subnet_public_id_c" {}
-variable "security_group_id" {}
+variable "ecs_sg_id" {}
 
 locals {
   ecs_cluster_name = "${var.name_prefix}-ecs-cluster"

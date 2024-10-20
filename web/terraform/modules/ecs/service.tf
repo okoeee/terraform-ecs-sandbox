@@ -17,7 +17,7 @@ resource "aws_ecs_service" "default" {
       var.subnet_public_id_a,
       var.subnet_public_id_c
     ]
-    security_groups = [var.security_group_id]
+    security_groups = [var.ecs_sg_id]
     assign_public_ip = true
   }
 }

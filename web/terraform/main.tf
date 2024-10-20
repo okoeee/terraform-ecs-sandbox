@@ -48,7 +48,7 @@ module "alb" {
   name_prefix = var.name_prefix
   subnet_public_id_a = module.network.subnet_public_id_a
   subnet_public_id_c = module.network.subnet_public_id_c
-  sg_id = module.security.security_group_id
+  alb_sg_id = module.security.alb_sg_id
   vpc_id = module.network.vpc_id
 }
 
@@ -82,5 +82,5 @@ module "ecs" {
 
   subnet_public_id_a = module.network.subnet_public_id_a
   subnet_public_id_c = module.network.subnet_public_id_c
-  security_group_id = module.security.security_group_id
+  ecs_sg_id = module.security.ecs_sg_id
 }
