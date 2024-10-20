@@ -7,7 +7,7 @@ variable "subnet_public_id_a" {}
 variable "subnet_public_id_c" {}
 
 # Security Group
-variable "sg_id" {}
+variable "alb_sg_id" {}
 
 # VPC
 variable "vpc_id" {}
