@@ -1,5 +1,5 @@
 
-resource "aws_ecs_task_definition" "defalut" {
+resource "aws_ecs_task_definition" "default" {
   container_definitions = local.task_definition_template
   family = local.task_definition_name
   cpu = local.task_cpu
