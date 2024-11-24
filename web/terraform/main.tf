@@ -10,7 +10,7 @@ terraform {
 
 # Provider
 provider "aws" {
-  profile = "terraform-user"
+  profile = "personal-ecs-full-access-use"
   region  = "us-east-1"
   default_tags {
     tags = {
